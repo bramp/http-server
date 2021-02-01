@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "start": "node ./bin/http-server",
-    "pretest": "common bin/http-server lib/ test",
+    "pretest": "eslint --fix bin/http-server lib/ test/",
     "test": "vows --spec --isolate"
   },
   "files": [
@@ -93,7 +93,7 @@
     "union": "~0.5.0"
   },
   "devDependencies": {
-    "common-style": "^3.0.0",
+    "eslint-config-populist": "git@github.com:bramp/populist-style.git",
     "request": "^2.88.2",
     "vows": "~0.8.3"
   },

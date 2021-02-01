@@ -1,0 +1,12 @@
+{
+  "extends": "populist",
+  "env": {
+	"node": true
+  },
+  "rules": {
+    "indent": ["error", 2, { "VariableDeclarator": "first" }],
+    "no-sync": "off",
+    "brace-style": ["error", "stroustrup"],
+    "strict": 0
+  }
+}
