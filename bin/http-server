@@ -106,17 +106,17 @@ if (version) {
   process.exit();
 }
 
-if (!port) {
+if (port) {
+  listen(port);
+}
+else {
   portfinder.basePort = 8080;
-  portfinder.getPort(function (err, port) {
+  portfinder.getPort(function (err, freeport) {
     if (err) {
       throw err;
     }
-    listen(port);
+    listen(freeport);
   });
-}
-else {
-  listen(port);
 }
 
 function listen(port) {
