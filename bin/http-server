@@ -63,12 +63,13 @@ if (argv.h || argv.help) {
 var port = argv.p || argv.port || parseInt(process.env.PORT, 10),
     host = argv.a || '0.0.0.0',
     ssl = argv.S || argv.ssl,
+    silent = argv.s || argv.silent,
     proxy = argv.P || argv.proxy,
     utc = argv.U || argv.utc,
     version = argv.v || argv.version,
     logger;
 
-if (!argv.s && !argv.silent) {
+if (!silent) {
   logger = {
     info: console.log,
     request: function (req, res, error) {
